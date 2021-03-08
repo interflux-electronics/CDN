@@ -1,0 +1,29 @@
+{
+  "name": "cdn-interflux",
+  "version": "1.0.0",
+  "description": "This CDN holds all images and videos for Interflux websites and apps.",
+  "homepage": "https://cdn.interflux.com",
+  "repository": "https://github.com/interflux-electronics/cdn.interflux.com",
+  "bugs": "https://github.com/interflux-electronics/cdn.interflux.com/issues",
+  "contributors": [
+    "Jan Werkhoven <j.werkhoven@interflux.com> (https://github.com/janwerkhoven)"
+  ],
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/register": "^7.8.3",
+    "cors": "^2.8.5",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
+    "gulp-size": "^3.0.0",
+    "prettier": "^1.19.1"
+  },
+  "scripts": {
+    "serve": "./node_modules/.bin/gulp serve",
+    "build": "./node_modules/.bin/gulp build",
+    "deploy": "./bin/deploy.sh",
+    "seed": "./bin/seed.sh"
+  }
+}
