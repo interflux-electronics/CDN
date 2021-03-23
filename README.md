@@ -2,17 +2,15 @@
 
 ### What
 
-This repository holds all the tools necessary to interact with the Interflux CDN. On the CDN we store all **images**, **videos**, **PDFs** served on our multiple websites and email signatures. This CDN helps us seperate concerns. Our rapidly changing Ember (Javascript) front end apps and Rails (Ruby) back needn't be concerned with these highly cacheable static resources.
+This repository holds all the tools necessary to interact with the Interflux CDN.
 
-### Tools
+On the CDN we store all **images**, **videos**, **PDFs** served on our multiple websites and email signatures. This CDN helps us seperate concerns. Our rapidly changing Ember (Javascript) front end apps and Rails (Ruby) back needn't be concerned with these highly cacheable static resources.
 
-- Script for **uploading files** a file to the CDN and creating a record in the production database.
-- Script for downloading all the production CDN files to your local.
-- Script for converting PNGs into JPGs and WEBPs, each in 14 sizes.
+### Highlights
 
-### Dependencies
+We use:
 
-- Files are hosted on an S3-like CDN at Digital Ocean.
+- Digital Ocean's S3-like CDN.
 - `s3cmd` commands to interact with the CDN.
 - `cwebp` commands for converting WEBPs.
 - `convert` commands for converting PNGs and JPGs.
@@ -20,7 +18,7 @@ This repository holds all the tools necessary to interact with the Interflux CDN
 
 ### Commands
 
-Getting set up:
+Get set up:
 
 ```
 git clone git@github.com:interflux-electronics/CDN.git
@@ -29,11 +27,30 @@ nvm install
 yarn install
 ```
 
-Serve files locally:
+Download all missing files from the production CDN down to `public/`:
+
+```
+bin/download
+```
+
+Serve all files in `public/` locally (for development):
 
 ```
 yarn serve
 open http://localhost:9000
+```
+
+Upload a file to the CDN and create its record in the production database:
+
+```
+bin/upload [file] [CDN path]
+bin/upload foo.pdf documents/guides/
+```
+
+Scan for PNGs and convert them to into JPGs and WEBPs, each in 14 sizes:
+
+```
+bin/convert
 ```
 
 ### Questions?
