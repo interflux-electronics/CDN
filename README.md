@@ -2,36 +2,38 @@
 
 ### What
 
-The Interflux Content Delivery Network (CDN) is responsible for making Interflux
-images, videos, fonts and PDFs available at lowest possible latency, no matter
-where you are in the world.
+This repository holds all the tools necessary to interact with the Interflux CDN. On the CDN we store all **images**, **videos**, **PDFs** served on our multiple websites and email signatures. This CDN helps us seperate concerns. Our rapidly changing Ember (Javascript) front end apps and Rails (Ruby) back needn't be concerned with these highly cacheable static resources.
 
-In this repository we prepare all the files that need to uploaded to the CDN.
+### Tools
 
-For example:
+- Script for **uploading files** a file to the CDN and creating a record in the production database.
+- Script for downloading all the production CDN files to your local.
+- Script for converting PNGs into JPGs and WEBPs, each in 14 sizes.
 
-1.  All JPG need to be converted to WEBP
-2.  Email templates and CSS need to be pre-processed
-3.  Files are fingerprinted to bust caches
+### Dependencies
 
-### Tech stack
+- Files are hosted on an S3-like CDN at Digital Ocean.
+- `s3cmd` commands to interact with the CDN.
+- `cwebp` commands for converting WEBPs.
+- `convert` commands for converting PNGs and JPGs.
+- Gulp task runner for serving on localhost:9000.
 
-We levarage:
+### Commands
 
-- Digital Ocean as CDN
-- Gulp as task runners
-- Node for scraping web content
-- Shell scripts for automation
-- `cwebp` for converting WEBP images
-
-### Setup
+Getting set up:
 
 ```
-git clone git@github.com:interflux-electronics/cdn.interflux.com.git
-cd cdn.interflux.com
+git clone git@github.com:interflux-electronics/CDN.git
+cd CDN
 nvm install
 yarn install
+```
+
+Serve files locally:
+
+```
 yarn serve
+open http://localhost:9000
 ```
 
 ### Questions?
@@ -44,5 +46,5 @@ Ask maintainer Jan Werkhoven:
 
 **Interflux**  
 Chemistry + Metallurgy + Electronics  
-<a href="mailto:ask@interflux.com">ask@interflux.com</a>  
-<a href="https://interflux.com">interflux.com</a>
+<a href="https://www.interflux.com">www.interflux.com</a>
+<a href="https://lmpa.interflux.com">lmpa.interflux.com</a>
