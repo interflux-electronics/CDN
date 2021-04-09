@@ -18,7 +18,7 @@ We use:
 
 ### Commands
 
-Get set up:
+Set up repo:
 
 ```
 git clone git@github.com:interflux-electronics/CDN.git
@@ -27,11 +27,26 @@ nvm install
 yarn install
 ```
 
-Download all missing files from the production CDN down to `public/`:
+Install and configure `s3cmd` for interacting with the CDN:
 
 ```
-bin/download
+brew install s3cmd
+s3cmd --configure
 ```
+
+The sync files DOWN from the CDN to `public/`:
+
+```
+bin/sync-down.sh
+```
+
+To sync file UP from `public/` to CDN:
+
+```
+bin/sync-up.sh
+```
+
+IMPORTANT: Syncing treats either your local or the CDN as source-of-truth and deletes all files that are not found in the source of truth. Syncing up to the CDN from an empty `public/` folder would literally wipe the entire CDN :fire:.
 
 Serve all files in `public/` locally (for development):
 
@@ -40,17 +55,10 @@ yarn serve
 open http://localhost:9000
 ```
 
-Upload a file to the CDN and create its record in the production database:
-
-```
-bin/upload [file] [CDN path]
-bin/upload foo.pdf documents/guides/
-```
-
 Scan for PNGs and convert them to into JPGs and WEBPs, each in 14 sizes:
 
 ```
-bin/convert
+bin/convert.sh
 ```
 
 ### Questions?
