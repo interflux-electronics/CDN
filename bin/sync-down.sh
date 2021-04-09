@@ -3,7 +3,7 @@
 set -e
 
 echo "-------"
-echo "Syncing files DOWN from CDN to local"
+echo "Syncing files from the CDN DOWN to local"
 echo "-------"
 
 # Download only the new files to the CDN.
