@@ -19,10 +19,6 @@ echo "-------"
 (set -x; s3cmd sync ./public/ s3://cdn-interflux/ --recursive --delete-removed --acl-public --add-header=Cache-Control:max-age=86400 --verbose)
 
 echo "-------"
-
-ssh -i ~/.ssh/bot@server.interflux.com bot@server.interflux.com "cd /var/www/api.interflux.com/builds/latest; bin/rails cdn:sync"
-
-echo "-------"
 echo "CDN sync complete!"
 echo "-------"
 echo ""
