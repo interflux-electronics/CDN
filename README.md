@@ -61,15 +61,14 @@ Scan for PNGs and convert them to into JPGs and WEBPs, each in 14 sizes:
 bin/convert.sh
 ```
 
-### Questions?
+### Need help?
 
 Ask maintainer Jan Werkhoven:  
-<a href="mailto:j.werkhoven@interflux.com">j.werkhoven@interflux.com</a>  
-<a href="https://github.com/janwerkhoven">github.com/janwerkhoven</a>
+<a href="mailto:j.werkhoven@interflux.com">j.werkhoven@interflux.com</a> 
 
 ---
 
-**Interflux**  
+### Interflux  
 Chemistry + Metallurgy + Electronics  
-<a href="https://www.interflux.com">www.interflux.com</a>
+<a href="https://www.interflux.com">www.interflux.com</a>  
 <a href="https://lmpa.interflux.com">lmpa.interflux.com</a>
