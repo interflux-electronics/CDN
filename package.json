@@ -25,5 +25,9 @@
     "build": "./node_modules/.bin/gulp build",
     "deploy": "./bin/deploy.sh",
     "seed": "./bin/seed.sh"
+  },
+  "volta": {
+    "node": "14.17.0",
+    "yarn": "1.22.10"
   }
 }
