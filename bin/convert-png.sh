@@ -86,8 +86,8 @@ base(){
 
   echo "base64     | $size2"
   rm -rf $output
-  cwebp -quiet -q 90 -resize $size2 0 "$ORIGINAL" -o "$temp";
-  base64 "$temp" > "$output"
+  (set -x; cwebp -quiet -q 90 -resize $size2 0 "$ORIGINAL" -o "$temp";)
+  (set -x; base64 -i "$temp" -o "$output")
   rm $temp;
 }
 
